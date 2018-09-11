@@ -1,0 +1,133 @@
+2-
+int main()
+{
+    int a,b;
+    printf("Escreva um valor: ");
+    scanf("%d",&a);
+    printf("Escreva outro valor: ");
+    scanf("%d",&b);
+    if(b > a)
+    {
+        printf ("O maior valor e: %d",b);
+        return 0;
+    }
+    printf ("O maior valor e: %d",a);
+    return 0;
+}
+
+
+
+---------------------------------------------------
+3-
+int main()
+{
+    int num,converte;
+    printf("Escreva o preço do celular(em dolar): ");
+    scanf("%d",&num);
+    converte = num*3.17;
+    printf("%d \n",converte);
+    if(converte >= 1000)
+    {
+        printf ("Nao eh um bom negocio");
+        return 0;
+    }
+    printf ("BOM NEGOCIO");
+    return 0;
+}
+
+---------------------------------------------------
+4-
+int main()
+{
+    int num,converte;
+    printf("Velocidade em milhas: ");
+    scanf("%d",&num);
+    converte = num*1.6;
+    printf("%d \n",converte);
+    if(converte >= 100)
+    {
+        printf ("DESACELERE");
+        return 0;
+    }
+    else if(converte < 80)
+    {
+        printf ("ACELERE");
+        return 0;
+    }
+    printf ("MANTENHA");
+    return 0;
+}
+---------------------------------------------------
+5-
+int main()
+{
+    int num;
+    int soma = 0;
+    printf("Escreva um numero: ");
+    scanf("%d",&num);
+    while(num != 0)
+    {
+        soma += num;
+        printf("Escreva outro numero: ");
+        scanf("%d",&num);
+    }
+    printf("A soma eh: %d",soma);
+}
+---------------------------------------------------
+6-
+int main()
+{
+    int n,soma;
+    int i = 1;
+    printf("Escreva um numero para 'n': ");
+    scanf("%d",&n);
+    for(i;i <= n;i++)
+    {
+       soma+= i*i;
+    }
+    printf("A soma eh: %d",soma);
+}
+-----------------------------------------------------
+7-
+int main()
+{
+    int times[20]; // time 1,2,3,....
+    int vitorias[20];
+    int empates[20];
+    int derrotas[20];
+
+    int vit,emp,der,i,ganhando,perdendo;
+    int maior = 0;
+    int menor = 0;
+
+    //printf("Escreva as vitorias, empates e derrotas do time 1: ")
+    //scanf("%d,%d,%d",&vit,&emp,&der);
+
+    for(i=1;i<=20;i++)
+    {
+        printf("Escreva as vitorias, empates e derrotas do time %d(vit,emp,der): ",i);
+        scanf("%d,%d,%d",&vit,&emp,&der);
+
+        vitorias[i-1] = vit;
+        empates[i-1] = emp;
+        derrotas[i-1] = der;
+        if (vit > maior)
+        {
+            ganhando = i;
+            maior = vit;
+        }
+        if(der > menor)
+        {
+            perdendo = i;
+            menor = der;
+        }
+    }
+    for(i=1;i<=20;i++)
+    {
+        printf("Time %d: vit: %d, emp: %d, der:%d .\n", i,vitorias[i-1],empates[i-1],derrotas[i-1]);
+    }
+    printf("Time em primeiro: Time %d\n",ganhando);
+    printf("Time em ultimo: Time %d\n",perdendo);
+
+}
+
