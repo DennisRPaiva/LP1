@@ -4,7 +4,8 @@ int main()
 {
 	char temps[50];
 	int temperatura;
-	int i,soma = 0,media;
+	int i,soma = 0;
+	float media;
 
 	for (i = 0;i<50;i++)
 	{
