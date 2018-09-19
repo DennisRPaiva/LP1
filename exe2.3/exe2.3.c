@@ -24,7 +24,7 @@ int main()
 	}
 	media = soma/50;
 
-	printf("A media eh: %d\n", media);
+	printf("A media eh: %f\n", media);
 
 	return 0;
 }
