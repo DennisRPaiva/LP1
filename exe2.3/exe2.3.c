@@ -18,7 +18,7 @@ int main()
 			scanf("%d",&temperatura);
 		}
 		soma += temperatura;
-		printf("%d\n",soma);
+		//printf("%d\n",soma);
 		temps[i] = (char)temperatura;
 	}
 	media = soma/50;
