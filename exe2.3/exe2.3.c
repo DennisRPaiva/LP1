@@ -31,7 +31,7 @@ int main()
 		}
 	}
 
-	printf("A media eh: %f.2f\n", media);
+	printf("A media eh: %.2f\n", media);
 	printf("Acima da media: %d\n", cont);
 
 	return 0;
