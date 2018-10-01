@@ -14,6 +14,7 @@ int todos_os_primos(int numero)
       }
       cont++;
    }
+   printf("%d\n",i); // imprime os primos
    return cont;
 }
 
