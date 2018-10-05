@@ -1,52 +1,68 @@
 #include <stdio.h>
 
 
-struct guarda_ponto
+typedef struct guarda_ponto
 {
     int x,y;
-    scanf("%d %d",&x,&y);
-    int vector[x][y];
-};
+}Ponto;
 
-struct guarda_ponto guardaP;
-
-void preencher_ponto(int vec[][5])
+Ponto preencher_ponto(int x, int y)
 {
-    int l,c,x;
+   Ponto p;
+   p.x = x;
+   p.y = y;
 
-    printf("Escolha um dos pontos do vetor para preencher(linha,coluna): ");
-    scanf("%d %d",l,c);
-    guardaP.vector[][1] = vec[l][c];
-    printf("Preencher com qual numero? ");
-    scanf("%d",&x);
-    vec[l][c] = x;
+   return p;
 }
 
-
-void preenche_vetor(int vec[][5])
+void Preenche_vetor(vec[])
 {
-    int i,j;
-    for (i=0;i<2;i++) // o vetor tem 10 pontos(2x5).
+    int i,x,y;
+    Ponto val;
+    for(i=0;i<10;i++)
     {
-        for(j=0;j<5;j++)
-        {
-            printf("Escreva um valor para [%d][%d]: ",i+1,j+1);
-            scanf("%d",&vec[i][j]);
-        }
+        printf("Descreva os pontos(x,y): \n",i+1);
+        scanf("%d %d",&x,&y);
+        val = preencher_ponto(x,y);
+        vec[i] = val;
     }
 }
-void Distante(int vec[][5])
+
+void Distancia(vec[])
 {
-    printf("O ponto mais distante de(0,0) esta ocupado pelo numero: %d",vec[2][5]);
+    int i,maior = 0,posicao;
+    Ponto distante;
+    for(i = 0;i<10;i++)
+    {
+        if(maior<vec[i].x)
+        {
+           maior = vec[i].x;
+           posicao = i;
+        }
+        if(maior<vec[i].y)
+        {
+           maior = vec[i].y;
+           posicao = i;
+        }
+    }
+    distante.x = vec[posicao].x;
+    distante.y = vec[posicao].y;
+
+    printf("O ponto mais distante de (0,0) eh: (%d,%d).\n",distante.x,distante,.y);
 }
 
 
-int main(){
-    int vetor[2][5];
-    int media=0;
-    //printf("Digite tamanho das dimensões(l,c): ");
-    //scanf("%d %d",&l,&c);
-    preenche_vetor(vetor);
-    preenche_ponto(vetor);
-    printf("A Media eh: %d\n",media);
-}
+
+
+int main()
+{
+    Ponto vetor[10];
+    Ponto p1;
+    p1 = preencher_ponto(1,2); // equivalente a...
+    /* isso.
+    Ponto p2;
+    p2.x = 1;
+    p2.y = 2;
+    */
+    Preenche_vetor(vetor);
+    Distancia(vetor);
