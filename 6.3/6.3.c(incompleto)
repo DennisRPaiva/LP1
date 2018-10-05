@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+
+struct guarda_ponto
+{
+    int x,y;
+    scanf("%d %d",&x,&y);
+    int vector[x][y];
+};
+
+struct guarda_ponto guardaP;
+
+void preencher_ponto(int vec[][5])
+{
+    int l,c,x;
+
+    printf("Escolha um dos pontos do vetor para preencher(linha,coluna): ");
+    scanf("%d %d",l,c);
+    guardaP.vector[][1] = vec[l][c];
+    printf("Preencher com qual numero? ");
+    scanf("%d",&x);
+    vec[l][c] = x;
+}
+
+
+void preenche_vetor(int vec[][5])
+{
+    int i,j;
+    for (i=0;i<2;i++) // o vetor tem 10 pontos(2x5).
+    {
+        for(j=0;j<5;j++)
+        {
+            printf("Escreva um valor para [%d][%d]: ",i+1,j+1);
+            scanf("%d",&vec[i][j]);
+        }
+    }
+}
+void Distante(int vec[][5])
+{
+    printf("O ponto mais distante de(0,0) esta ocupado pelo numero: %d",vec[2][5]);
+}
+
+
+int main(){
+    int vetor[2][5];
+    int media=0;
+    //printf("Digite tamanho das dimensões(l,c): ");
+    //scanf("%d %d",&l,&c);
+    preenche_vetor(vetor);
+    preenche_ponto(vetor);
+    printf("A Media eh: %d\n",media);
+}
