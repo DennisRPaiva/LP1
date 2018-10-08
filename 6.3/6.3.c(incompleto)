@@ -66,4 +66,4 @@ int main()
     */
     Preenche_vetor(vetor);
     Distancia(vetor);
-    }
+}
