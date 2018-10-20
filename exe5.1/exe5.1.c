@@ -9,12 +9,12 @@ int main(){
 	if (x>y) // verifica o maior
 	{
 			p = &x;
-			*p = (p-50); // modifica o ponteiro
+			*p = (*p-50); // modifica o ponteiro
 	}
 	else
 	{
 			p = &y;
-			*p = (p-50);
+			*p = (*p-50);
 	}
 
 	printf("%d %d\n", x,y);// printa os valores finais	
