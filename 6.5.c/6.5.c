@@ -15,15 +15,17 @@ void strjoin2(char* dest, char* batman1, char* batman2)
     int tam1 = strlen2(batman1);
     int tam2 = strlen2(batman2);
 
-    for(i;i<=tam1;i++)
+    for(i;i<tam1;i++)
     {
         dest[i] = batman1[i];
     }
     int a = strlen2(dest);
-    for(i = 0;i<=tam2;i++)
+    for(i = 0;i<tam2;i++)
     {
         dest[a+i] = batman2[i];
     }
+    //falta botar o /0 no final.
+    //dest[(tam1+tam2)+1] == '\0';
 }
 
 
