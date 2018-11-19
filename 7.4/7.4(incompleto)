@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Personagem
+{
+    int ident;
+    int x,y;
+    int pontos = 0;
+
+}Personagem;
+
+Personagem PreenchePonto()
+{
+    int x,y;
+    Personagem p;
+
+    printf("x: ");
+    scanf("%d",&x);
+    p.x = x;
+
+    printf("y: ");
+    scanf("%d",&y);
+    p.y = y;
+
+    p.ident = num;
+    num++;
+    return p;
+}
+
+
+void PreencheVetor(vec[])
+{
+    int i;
+    Personagem heroi;
+
+    for(i=1;i<=10;i++)
+    {
+        printf("Personagem %d: ");
+        heroi = preenchePonto();
+    }
+
+}
+
+int num = 1; // global para poder ter o numero dos personagens.
+
+int main()
+{
+    int i;
+    Personagem vetor[10];
+    PreencheVetor(vetor);
+
+    for(i=0;i<10;i++)
+    {
+        printf("Personagem %d--> x: %d, y: %d, numeracao: %d.\n",(i+1),vetor[i].x,vetor[i].y,vetor[i].ident);
+    }
+
+    return 0;
+}
