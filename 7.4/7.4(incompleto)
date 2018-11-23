@@ -3,11 +3,17 @@
 
 int num = 1; // global para poder ter o numero dos personagens.
 
+
+typedef struct coordenada
+{
+    int x,y;
+}Coordenada;
+
 typedef struct Personagem
 {
     int ident;
-    int x,y;
     int pontos;
+    Coordenada c;
 
 }Personagem;
 
@@ -16,17 +22,17 @@ Personagem PreenchePonto()
     int x,y;
     Personagem p;
 
+    p.ident = num;
     p.pontos = 0;
 
     printf("x: ");
     scanf("%d",&x);
-    p.x = x;
+    p.c.x = x;
 
     printf("y: ");
     scanf("%d",&y);
-    p.y = y;
+    p.c.y = y;
 
-    p.ident = num;
     num++;
     return p;
 }
@@ -46,16 +52,41 @@ void PreencheVetor(Personagem vec[])
 
 }
 
+void LePersonagem(Personagem vec[])
+{
+    int i;
+    Coordenada pegaPosis;
+
+    for (i=0;i<10;i++)
+    {
+        pegaPosis = LePosicao(vec[i]);
+        printf("Posicao do personagem %d: (%d,%d) \n",(i+1),pegaPosis.x,pegaPosis.y);
+    }
+
+}
+
+Coordenada LePosicao(Personagem p)
+{
+    Coordenada posicao;
+
+    posicao.x = p.c.x;
+    posicao.y = p.c.y;
+
+    return posicao;
+}
+
 int main()
 {
     int i;
     Personagem vetor[10];
     PreencheVetor(vetor);
+    //char matriz[10][10];
 
     for(i=0;i<10;i++)
     {
-        printf("Personagem %d--> x: %d, y: %d, numeracao: %d, Pontuacao: %d.\n",(i+1),vetor[i].x,vetor[i].y,vetor[i].ident,vetor[i].pontos);
+        printf("Personagem %d--> x: %d, y: %d, numeracao: %d, Pontuacao: %d.\n",(i+1),vetor[i].c.x,vetor[i].c.y,vetor[i].ident,vetor[i].pontos);
     }
+    LePersonagem(vetor);
 
     return 0;
 }
