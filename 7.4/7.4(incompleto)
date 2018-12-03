@@ -9,7 +9,7 @@ typedef struct coordenada
     int x,y;
 }Coordenada;
 
-typedef struct Personagem
+typedef struct personagem
 {
     int ident;
     int pontos;
@@ -52,6 +52,18 @@ void PreencheVetor(Personagem vec[])
 
 }
 
+
+Coordenada LePosicao(Personagem p)
+{
+    Coordenada posicao;
+
+    posicao.x = p.c.x;
+    posicao.y = p.c.y;
+
+    return posicao;
+}
+
+
 void LePersonagem(Personagem vec[])
 {
     int i;
@@ -63,16 +75,6 @@ void LePersonagem(Personagem vec[])
         printf("Posicao do personagem %d: (%d,%d) \n",(i+1),pegaPosis.x,pegaPosis.y);
     }
 
-}
-
-Coordenada LePosicao(Personagem p)
-{
-    Coordenada posicao;
-
-    posicao.x = p.c.x;
-    posicao.y = p.c.y;
-
-    return posicao;
 }
 
 int main()
