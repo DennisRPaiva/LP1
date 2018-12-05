@@ -77,18 +77,51 @@ void LePersonagem(Personagem vec[])
 
 }
 
+void fazMatriz(char M[11][11])
+{
+    int i,j;
+
+   for(i = 0;i <10; i++)
+   {
+       for(j = 0;j < 10; j++)
+       {
+           M[i][j] = 0;
+       }
+   }
+}
+
+void mapa(Personagem vec[],char M[10][10])
+{
+    int i,j;
+    printf("  1  2  3  4  5  6  7  8  9  10\n");
+
+    for (i = 0; i<10; i++)
+    {
+        printf("%d ",(i+1));
+        for(j = 0; j<10;j++)
+        {
+            M[vec[i].c.x][vec[i].c.y] = vec[i].ident;
+            printf("%d  ",M[i][j]);
+        }
+        printf("\n");
+    }
+
+}
+
 int main()
 {
     int i;
     Personagem vetor[10];
     PreencheVetor(vetor);
-    //char matriz[10][10];
+    char matriz[10][10];
 
     for(i=0;i<10;i++)
     {
         printf("Personagem %d--> x: %d, y: %d, numeracao: %d, Pontuacao: %d.\n",(i+1),vetor[i].c.x,vetor[i].c.y,vetor[i].ident,vetor[i].pontos);
     }
     LePersonagem(vetor);
+    fazMatriz(matriz);
+    mapa(vetor,matriz);
 
     return 0;
 }
