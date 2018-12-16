@@ -9,7 +9,7 @@ int main()
     FILE* arq = fopen("8.1.txt","w");
 
     printf("Digite a frase(sem espaços): \n");
-    scanf("%s",frase);
+    scanf("%s",frase);  // scanf("%[^\n]",frase); ---> assim pode-se usar espaços.
     tamanho = strlen(frase);
 
 
