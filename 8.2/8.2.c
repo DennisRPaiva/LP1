@@ -1,21 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int main()
 {
-    int i = 0,tamanho;
-    char frase[25];
-    
-    FILE* arq = fopen("8.1.txt","r");
+	char frase[25],ch;
+	int tam,i;
 
-    for(i;i<25;i++)
-    {
-			frase[i]=fgetc(arq);
-    }
-    
-    
-    
-    fclose(arq);
-    printf("%s\n",frase);
-    return 0;
+	FILE* arq = fopen("8.1.txt","r");
+
+	for(i = 0; i<25;i++)
+	{
+		while( (ch=fgetc(arq))!= EOF )
+		{
+  			putchar(ch);
+		}
+	}
+
+	fclose(arq);
+	return 0;
 }
